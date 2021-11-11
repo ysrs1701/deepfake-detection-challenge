@@ -147,7 +147,7 @@ def main():
 
     model = EfficientNet.from_name('efficientnet-b7', override_params={'num_classes': 1})
     state = torch.load(PRETRAINED_WEIGHTS_PATH, map_location=lambda storage, loc: storage)
-    state.pop('_fc.weight')
+    state.pop('_fc.weight')#删除全连接层参数
     state.pop('_fc.bias')
     res = model.load_state_dict(state, strict=False)
     assert set(res.missing_keys) == set(['_fc.weight', '_fc.bias']), 'issue loading pretrained weights'
