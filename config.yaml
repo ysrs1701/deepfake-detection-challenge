@@ -1,0 +1,4 @@
+DFDC_DATA_PATH: "./test-videos"
+ARTIFACTS_PATH: "./artifacts"
+MODELS_PATH: "./models"
+SUBMISSION_PATH: "./test.csv"
